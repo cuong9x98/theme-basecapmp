@@ -1,0 +1,5 @@
+<?php for ($i = 1; $i <= 2; $i++) {?>
+    <div class="list-item-top">
+        <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ads-' . $i)->toHtml(); ?>
+    </div>
+<?php } ?>

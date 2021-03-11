@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="top.links">
+            <referenceBlock name="header" remove="true"/>
+            <referenceBlock name="authorization-link" remove="true"/>
+            <referenceBlock name="register-link" remove="true"/>
+            <referenceBlock name="catalog.compare.link" remove="true"/>
+            <block class="Magento\Framework\View\Element\Template" name="contact.us" after="wish-list-link" template="Magento_Theme::contactus.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="call.us" after="-" template="Magento_Theme::callus.phtml"/>
+        </referenceBlock>
+
+        <referenceContainer name="page.top">
+            <container name="container.title.header" htmlTag="div" htmlClass="title-header" after="navigation.sections">
+                <block class="Magento\Framework\View\Element\Template" name="title.header" template="Magento_Theme::title-header.phtml"/>
+            </container>
+        </referenceContainer>
+
+        <referenceContainer name="content">
+            <!-- <block class="Magento\Framework\View\Element\Template" name="product.info.ak" before="-" template="Magento_Theme::ok.phtml"/> -->
+            <!-- <block class="Magento\Customer\Block\Form\Login" name="customer_form_loginok" template="Magento_Customer::form/login.phtml">
+                <container name="form.additional.infook" as="form_additional_infook"/>
+            </block> -->
+        </referenceContainer>
+         <referenceContainer name="footer-container">
+                <block class="Magento\Store\Block\Switcher" name="browse_basecamp" as="browse_basecamp" template="Magento_Theme::footer.phtml"/>
+            <container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="footer content" remove="true">
+            </container>
+            <referenceBlock name="absolute_footer" remove="true"/>
+        </referenceContainer>
+    </body>
+</page>
